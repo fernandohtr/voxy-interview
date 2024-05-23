@@ -28,13 +28,13 @@ export default function Counter() {
   }
 
   const countWords = (text: string): void => {
-    const textWithoutSpecialCharacters = text.replace(/[^a-zA-Z0-9\s]/g, "")
+    const textWithoutSpecialCharacters = text.replace(/[^\p{L}\p{N}\s]/gu, "")
     const numberOfWords = textWithoutSpecialCharacters.split(/\s+/).filter(word => word !== "").length
     setNumberOfWords(numberOfWords)
   }
 
   const countLetters = (text: string): void => {
-    const textWithoutSpecialCharacters = text.replace(/[^a-zA-Z]/g, "")
+    const textWithoutSpecialCharacters = text.replace(/[^\p{L}\p{N}]/gu, "")
     const numberOfLetters = textWithoutSpecialCharacters.length
     setNumberOfLetters(numberOfLetters)
   }
