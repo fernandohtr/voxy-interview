@@ -1,5 +1,7 @@
 section {
   width: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 section form {
@@ -7,7 +9,7 @@ section form {
   flex-direction: column;
 }
 
-section form textarea {
+section textarea {
   max-width: 330px;
   width: 100%;
   height: 250px;
@@ -39,7 +41,6 @@ section form input[type="submit"] {
 section form input[type="submit"]:hover {
   background-color: rgb(0, 201, 80);
   color: rgb(205, 243, 253);
-
 }
 
 section .result {

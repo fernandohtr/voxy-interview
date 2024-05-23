@@ -27,3 +27,24 @@ main {
 main h1 {
   margin-bottom: 2rem;
 }
+
+main div {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 2rem;
+}
+
+main div button {
+  border: none;
+  padding: 1rem 1.5rem;
+  background-color: rgb(135, 251, 181);
+  color: rgb(0, 128, 163);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+main div button:disabled {
+  background-color: rgb(222, 255, 235);
+  color: rgb(131, 179, 192);
+}
