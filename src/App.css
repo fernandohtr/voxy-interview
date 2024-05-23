@@ -2,7 +2,9 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: rgb(230, 216, 203);
+  background-color: rgb(172, 82, 192);
+  max-height: 100svh;
+  color: rgb(148, 234, 255);
 }
 
 @media only screen and (max-width: 499px) {
@@ -14,7 +16,6 @@ main {
 
 @media (min-width: 500px) {
   main {
-    height: 80svh;
     width: 400px;
     padding: 2rem;
     margin: 10svh auto;

@@ -1,4 +1,5 @@
 import { useRef, useState } from "react"
+import "./Counter.css"
 
 export default function Counter() {
   const [numberOfWords, setNumberOfWords] = useState(0)
