@@ -1,0 +1,28 @@
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgb(230, 216, 203);
+}
+
+@media only screen and (max-width: 499px) {
+  main {
+    height: 100svh;
+    padding: 2rem 2rem;
+  }
+}
+
+@media (min-width: 500px) {
+  main {
+    height: 80svh;
+    width: 400px;
+    padding: 2rem;
+    margin: 10svh auto;
+    border-radius: 50px;
+    box-shadow: 5px 2px 2px 2px rgba(0, 0, 0, 0.1);
+  }
+}
+
+main h1 {
+  margin-bottom: 2rem;
+}
