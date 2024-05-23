@@ -4,6 +4,7 @@ import "./Counter.css"
 export default function Counter() {
   const [numberOfWords, setNumberOfWords] = useState(0)
   const [numberOfLetters, setNumberOfLetters] = useState(0)
+  const [numberOfNumbers, setNumberOfNumbers] = useState(0)
   const [errorMessage, setErrorMessage] = useState("")
   const textAreaRef = useRef<HTMLTextAreaElement>(null)
 
@@ -16,10 +17,12 @@ export default function Counter() {
         setErrorMessage("Text input is required!");
         setNumberOfWords(0)
         setNumberOfLetters(0)
+        setNumberOfNumbers(0)
       } else {
         setErrorMessage("")
         countWords(text)
         countLetters(text)
+        countNumbers(text)
       }
     }
   }
@@ -31,9 +34,15 @@ export default function Counter() {
   }
 
   const countLetters = (text: string): void => {
-    const textWithoutSpecialCharacters = text.replace(/[^a-zA-Z0-9]/g, "")
+    const textWithoutSpecialCharacters = text.replace(/[^a-zA-Z]/g, "")
     const numberOfLetters = textWithoutSpecialCharacters.length
     setNumberOfLetters(numberOfLetters)
+  }
+
+  const countNumbers = (text: string): void => {
+    const textWithoutSpecialCharacters = text.replace(/[^0-9]/g, "")
+    const numberOfNumbers = textWithoutSpecialCharacters.length
+    setNumberOfNumbers(numberOfNumbers)
   }
   
   return (
@@ -47,6 +56,7 @@ export default function Counter() {
         {errorMessage && <div className="error-message">{errorMessage}</div> }
         {!errorMessage && <span>Number of Words: {numberOfWords}</span>}
         {!errorMessage && <span>Number of Letters: {numberOfLetters}</span>}
+        {!errorMessage && <span>Number of Numbers: {numberOfNumbers}</span>}
       </div>
     </section>
   )
